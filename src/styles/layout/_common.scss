@@ -2445,6 +2445,10 @@ html {
 
   .people_card {
     text-align: start;
+    
+    @include media('<phone'){
+      width: 47%
+    }
   }
 
   .people_img {
