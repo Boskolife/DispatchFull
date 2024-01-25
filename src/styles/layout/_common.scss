@@ -2351,7 +2351,7 @@ html {
     margin: 0 auto;
 
     @include media('<tablet') {
-      flex-direction: column;
+      flex-direction: column-reverse;
     }
   }
 
