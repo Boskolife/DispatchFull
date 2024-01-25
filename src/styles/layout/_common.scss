@@ -2265,9 +2265,14 @@ html {
     @include adaptive-value('height', 48, 40, 1);
     margin-bottom: 25px;
   }
-
+  
   .item_title {
     margin-bottom: 15px;
+    line-height: 120%;
+
+    @include media('<phone') {
+      max-width: 230px;
+    }
   }
 
   .item_text {
