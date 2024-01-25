@@ -507,7 +507,7 @@ html {
   .reviews_title {
     text-align: center;
     color: $green;
-    font-size: 46px;
+    @include adaptive-value("font-size", 46, 24, 1);
     font-weight: 600;
     line-height: 117%;
     letter-spacing: -1px;
@@ -517,7 +517,7 @@ html {
   .reviews_description {
     color: $gray71;
     text-align: center;
-    font-size: 18px;
+    @include adaptive-value("font-size", 18, 16, 1);
     font-weight: 500;
     line-height: 144%;
     @include adaptive-value('margin-bottom', 90, 40, 1);
