@@ -2431,8 +2431,7 @@ html {
 
   .people_title {
     @include adaptive-value('margin-bottom', 50, 35, 1);
-    @include adaptive-value("font-size", 36, 26, 1);
-    line-height: 120%;
+    @include adaptive-value("font-size", 36, 18, 1);
   }
 
   .people_info_wrap {
