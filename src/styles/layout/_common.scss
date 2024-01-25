@@ -2798,6 +2798,7 @@ html {
 
     @include media('<595px') {
       justify-content: flex-start;
+      padding-bottom: 10px;
     }
   }
 
