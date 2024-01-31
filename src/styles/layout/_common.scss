@@ -358,7 +358,6 @@ html {
       display: flex;
       align-items: flex-start;
       flex-direction: column;
-      width: 100%;
     }
 
     @include media('<tablet') {
@@ -451,7 +450,6 @@ html {
     align-items: center;
     justify-content: flex-end;
     column-gap: 18px;
-    @include adaptive-value('margin-right', 150, 0, 1);
 
     @include media('<desktop') {
       justify-content: center;
