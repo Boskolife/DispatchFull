@@ -12,6 +12,20 @@ export const swiper = new Swiper('.works_slider', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  on: {
+    slideChange: function () {
+      const slides = document.querySelectorAll('.swiper-slide');
+      const step = document.querySelectorAll('.step');
+      
+      step.forEach((bullet: Element) => {
+        (bullet as HTMLElement).classList.remove('active_step');
+      });
+      
+      const activeIndex = swiper.realIndex;
+      (slides[activeIndex] as HTMLElement).classList.add('active');
+      (step[activeIndex] as HTMLElement).classList.add('active_step');
+    },
+  },
 });
 
 export const swiperReviews = new Swiper('.reviews_swiper', {
