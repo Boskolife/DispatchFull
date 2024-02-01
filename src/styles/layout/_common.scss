@@ -77,6 +77,10 @@ html {
   .descripotion {
     max-width: 396px;
     width: 100%;
+
+  @include media('<desktop'){
+    max-width: 100%;
+  }
   }
 
   .text {
@@ -87,6 +91,10 @@ html {
     font-weight: 500;
     line-height: 26px;
     margin-bottom: 20px;
+
+    @include media('<desktop'){
+      text-align: start;
+    }
   }
 
   .btn_wrap {
@@ -235,27 +243,26 @@ html {
   }
 
   .benefits_items_wrap {
-    display: grid;
-    grid-template: 1fr / repeat(3, 1fr);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
     @include adaptive-value('gap', 77, 35, 1);
-    max-width: 908px;
+    max-width: 1150px;
     width: 100%;
     margin: 0 0 0 auto;
+    @include adaptive-value('max-width', 1150, 280, 1);
+  }
 
-    @include media('<desktop') {
-      grid-template: 1fr / repeat(auto-fit, minmax(220px, 520px));
-      justify-content: center;
-      max-width: 640px;
+  .item{
+    width: 25%;
+
+    @include media('<desktop'){
+      width: 45%;
     }
 
-    @include media('<tablet') {
-      gap: 20px;
-      justify-items: start;
-      max-width: 400px;
-    }
-
-    @include media('<phone') {
-      max-width: 300px;
+    @include media('<tablet'){
+      width: 100%;
     }
   }
 
@@ -777,6 +784,7 @@ html {
     width: 100%;
     height: 100%;
     @include adaptive-value('font-size', 46, 32, 1);
+    padding: 0 15px;
   }
 
   .content {
@@ -785,6 +793,10 @@ html {
     left: 50%;
     transform: translate(-50%, -50%);
     text-align: center;
+
+    @include media('<phone'){
+      max-width: 300px;
+    }
   }
 
   .join_title {
@@ -801,7 +813,7 @@ html {
 
   .join_text {
     color: $white;
-    @include adaptive-value('font-size', 18, 16, 1);
+    @include adaptive-value('font-size', 18, 14, 1);
     font-weight: 500;
     line-height: 144%;
     max-width: 746px;
@@ -1068,6 +1080,8 @@ html {
 }
 
 .made {
+  @include adaptive-value('padding-bottom', 120, 30, 1);
+  
   .join_text {
     max-width: 758px;
   }
