@@ -153,7 +153,7 @@ html {
     left: 80px;
     top: 0;
     z-index: 1;
-    width:8px;
+    width: 8px;
     height: 250%;
 
     @include media('<tablet') {
@@ -189,6 +189,19 @@ html {
     @include media('<tablet') {
       width: 24px;
       top: -10px;
+      left: 14.5px;
+    }
+  }
+
+  .transition_3 {
+    position: absolute;
+    bottom: -20px;
+    left: 45.5px;
+    transform: rotateZ(180deg);
+
+    @include media('<tablet') {
+      width: 24px;
+      bottom: -10px;
       left: 14.5px;
     }
   }
@@ -314,8 +327,32 @@ html {
   .title_wrap {
     position: relative;
     max-width: max-content;
-    margin: 0 auto;
     margin-bottom: 75px;
+  }
+
+  .transition_2 {
+    position: absolute;
+    top: -20px;
+    left: 45.5px;
+
+    @include media('<tablet') {
+      width: 24px;
+      top: -10px;
+      left: 14.5px;
+    }
+  }
+
+  .transition_3 {
+    position: absolute;
+    bottom: -20px;
+    left: 45.5px;
+    transform: rotateZ(180deg);
+
+    @include media('<tablet') {
+      width: 24px;
+      bottom: -10px;
+      left: 14.5px;
+    }
   }
 
   .works_title {
@@ -567,20 +604,11 @@ html {
   .reviews_title {
     text-align: center;
     color: $green;
-    @include adaptive-value("font-size", 46, 24, 1);
+    @include adaptive-value('font-size', 46, 24, 1);
     font-weight: 600;
     line-height: 117%;
     letter-spacing: -1px;
     margin-bottom: 25px;
-  }
-
-  .reviews_description {
-    color: $gray71;
-    text-align: center;
-    @include adaptive-value("font-size", 18, 16, 1);
-    font-weight: 500;
-    line-height: 144%;
-    @include adaptive-value('margin-bottom', 90, 40, 1);
   }
 
   .reviews_body {
@@ -667,6 +695,7 @@ html {
     border-radius: 20px;
     @include adaptive-value('font-size', 16, 14, 1);
   }
+
   .swiper-pagination-bullet-active {
     background-color: #fafafa;
     color: $black;
@@ -675,7 +704,6 @@ html {
   }
 
   .review_item {
-    // max-width: 450px;
     width: 100%;
   }
 
@@ -710,6 +738,7 @@ html {
     height: 56px;
     border-radius: 50%;
     overflow: hidden;
+    object-fit: cover;
   }
 
   .author_info {
@@ -792,7 +821,6 @@ html {
 }
 
 .partners {
-  
   .container {
     @include adaptive-value('padding-top', 130, 60, 1);
     @include adaptive-value('padding-bottom', 130, 60, 1);
@@ -1318,9 +1346,20 @@ html {
     }
   }
 
+  .item_img {
+    min-width: 32px;
+    min-height: 32px;
+    background-color: $white;
+    border: 1px solid $green;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .item_icon {
-    width: 32px;
-    height: 32px;
+    min-width: 16px;
+    min-height: 16px;
   }
 
   .item_title {
@@ -1826,6 +1865,18 @@ html {
 
     @include media('<phone') {
       width: 100%;
+    }
+
+    .desktop{
+      @include media('<phone'){
+        display: none;
+      }
+    }
+    .phone{
+      display: none;
+      @include media('<phone'){
+        display: block;
+      }
     }
   }
 
@@ -2336,7 +2387,7 @@ html {
     @include adaptive-value('height', 48, 40, 1);
     margin-bottom: 25px;
   }
-  
+
   .item_title {
     margin-bottom: 15px;
     line-height: 120%;
@@ -2443,6 +2494,19 @@ html {
       width: 100%;
       height: 100%;
     }
+
+    .desktop {
+      @include media('<phone') {
+        display: none;
+      }
+    }
+
+    .phone {
+      display: none;
+      @include media('<phone') {
+        display: block;
+      }
+    }
   }
 }
 
@@ -2472,7 +2536,7 @@ html {
     grid-template: 1fr 1fr / repeat(auto-fit, minmax(376px, 1fr));
     gap: 25px;
 
-    @include media('<phone'){
+    @include media('<phone') {
       grid-template: 1fr 1fr / repeat(auto-fit, minmax(250px, 1fr));
     }
   }
@@ -2502,7 +2566,7 @@ html {
 
   .people_title {
     @include adaptive-value('margin-bottom', 50, 35, 1);
-    @include adaptive-value("font-size", 36, 18, 1);
+    @include adaptive-value('font-size', 36, 18, 1);
   }
 
   .people_info_wrap {
@@ -2515,9 +2579,9 @@ html {
 
   .people_card {
     text-align: start;
-    
-    @include media('<phone'){
-      width: 47%
+
+    @include media('<phone') {
+      width: 47%;
     }
   }
 
@@ -2660,9 +2724,20 @@ html {
     gap: 12px;
   }
 
-  .icon {
-    width: 32px;
-    height: 32px;
+  .item_img {
+    min-width: 32px;
+    min-height: 32px;
+    background-color: $white;
+    border: 1px solid $green;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .item_icon {
+    min-width: 16px;
+    min-height: 16px;
   }
 
   .factors_img {
@@ -2845,7 +2920,7 @@ html {
       top: 0;
       background: linear-gradient(270deg, #fff 0%, rgba(255, 255, 255, 0) 100%);
     }
-    
+
     ::-webkit-scrollbar {
       width: 0;
       height: 0;
@@ -2871,7 +2946,6 @@ html {
       justify-content: flex-start;
       padding-bottom: 10px;
     }
-
   }
 
   .similar_text {
