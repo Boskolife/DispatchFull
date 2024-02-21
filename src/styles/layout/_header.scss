@@ -8,10 +8,16 @@
   }
 
   .header_logo {
-    @include adaptive-value('width', 167, 95, 1);
+    @include adaptive-value('width', 292, -100, 1);
     @include adaptive-value('height', 60, 35, 1);
     position: relative;
     z-index: 4;
+    display: flex;
+    align-items: center;
+
+    @include media('<desktop'){
+      width: 200px;
+    }
   }
 
   .menu {
@@ -124,6 +130,7 @@
     width: 20px;
     height: 20px;
     transition: all 0.3s ease 0s;
+    stroke: $green;
   }
 
   .phone_number {

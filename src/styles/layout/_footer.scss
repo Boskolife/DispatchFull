@@ -17,8 +17,8 @@
   }
 
   .footer_logo {
-    @include adaptive-value('width', 140, 132, 1);
-    @include adaptive-value('height', 60, 57, 1);
+    @include adaptive-value('width', 292, 177, 1);
+    @include adaptive-value('height', 60, 34, 1);
     margin-bottom: 30px;
     display: inline-block;
   }

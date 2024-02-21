@@ -10,7 +10,7 @@ html {
   }
 
   ::-webkit-scrollbar-track {
-    background-color: $greenC0;
+    background-color: rgba(85, 50, 213, 0.3);
   }
 
   ::-webkit-scrollbar-thumb {
@@ -149,7 +149,18 @@ html {
 
 .benefits {
   @include adaptive-value('padding-bottom', 230, 70, 1);
-  overflow: hidden;
+  position: relative;
+
+  .line_bg {
+    position: absolute;
+    top: -40%;
+    right: 0;
+    width: 30%;
+
+    @include media('<tablet') {
+      display: none;
+    }
+  }
 
   .container {
     @include adaptive-value('padding-top', 125, 65, 1);
@@ -159,10 +170,11 @@ html {
   .line {
     position: absolute;
     left: 80px;
-    top: 0;
+    top: -45px;
     z-index: 1;
     width: 8px;
     height: 250%;
+    stroke: $green;
 
     @include media('<tablet') {
       width: 4px;
@@ -175,10 +187,11 @@ html {
     top: -6px;
     left: 60px;
     transform: rotateZ(180deg);
+    fill: $green;
 
     @include media('<tablet') {
       width: 24px;
-      top: -4px;
+      top: -10px;
       left: 30px;
     }
   }
@@ -192,11 +205,11 @@ html {
   .transition_2 {
     position: absolute;
     top: -20px;
-    left: 45.5px;
+    left: 44.5px;
 
     @include media('<tablet') {
       width: 24px;
-      top: -10px;
+      top: -16px;
       left: 14.5px;
     }
   }
@@ -204,12 +217,12 @@ html {
   .transition_3 {
     position: absolute;
     bottom: -20px;
-    left: 45.5px;
+    left: 44.5px;
     transform: rotateZ(180deg);
 
     @include media('<tablet') {
       width: 24px;
-      bottom: -10px;
+      bottom: -16px;
       left: 14.5px;
     }
   }
@@ -305,6 +318,8 @@ html {
   background-color: $greenEC;
   @include adaptive-value('padding-bottom', 130, 0, 1);
   overflow: hidden;
+  position: relative;
+  z-index: 1;
 
   @include media('<desktop') {
     padding-bottom: 0;
@@ -324,7 +339,7 @@ html {
     top: 0;
     z-index: 1;
     height: 100%;
-    width: 8px;
+    // stroke: $green;
 
     @include media('<tablet') {
       width: 4px;
@@ -341,11 +356,11 @@ html {
   .transition_2 {
     position: absolute;
     top: -20px;
-    left: 45.5px;
+    left: 44.5px;
 
     @include media('<tablet') {
       width: 24px;
-      top: -10px;
+      top: -16px;
       left: 14.5px;
     }
   }
@@ -353,12 +368,12 @@ html {
   .transition_3 {
     position: absolute;
     bottom: -20px;
-    left: 45.5px;
+    left: 44.5px;
     transform: rotateZ(180deg);
 
     @include media('<tablet') {
       width: 24px;
-      bottom: -10px;
+      bottom: -16px;
       left: 14.5px;
     }
   }
@@ -436,7 +451,7 @@ html {
       width: 95%;
     }
 
-    @include media('<phone'){
+    @include media('<phone') {
       width: 100%;
     }
   }
@@ -536,6 +551,7 @@ html {
 
     @include media('<desktop') {
       width: 100%;
+
       &::after {
         content: '';
         position: absolute;
@@ -543,11 +559,9 @@ html {
         left: 0;
         width: 100%;
         height: 116px;
-        background: linear-gradient(
-          180deg,
-          rgba(236, 249, 243, 0) 0%,
-          #ecf9f3 100%
-        );
+        background: linear-gradient(180deg,
+            rgba(236, 249, 243, 0) 0%,
+            #ecf9f3 100%);
         z-index: 1;
       }
     }
@@ -592,6 +606,7 @@ html {
       left: 35%;
     }
   }
+
   .swiper-button-next {
     right: 40%;
     top: 94%;
@@ -670,6 +685,7 @@ html {
       left: 25px;
     }
   }
+
   .swiper-button-next {
     right: 30px;
 
@@ -700,6 +716,7 @@ html {
       font-weight: 600;
     }
   }
+
   .swiper-pagination {
     top: 82% !important;
     display: flex;
@@ -735,7 +752,7 @@ html {
     display: flex;
     flex-direction: column;
 
-    @include media('<desktop'){
+    @include media('<desktop') {
       height: auto;
     }
   }
@@ -835,6 +852,10 @@ html {
     width: 100%;
     margin: 0 auto;
     @include adaptive-value('margin-bottom', 35, 25, 1);
+
+    .green_text {
+      color: $blueA2;
+    }
   }
 
   .join_text {
@@ -846,15 +867,21 @@ html {
     width: 100%;
     margin: 0 auto;
     @include adaptive-value('margin-bottom', 45, 30, 1);
+
+    .green_text {
+      color: $blueA2;
+    }
   }
 
   .green_btn {
     padding: 22px 37px;
-    color: $white;
+    color: $black;
     @include adaptive-value('font-size', 18, 16, 1);
     font-weight: 600;
     line-height: 144%;
     letter-spacing: -0.36px;
+    background-color: $blueA2;
+    border-color: $blueA2;
   }
 }
 
@@ -872,7 +899,7 @@ html {
     @include adaptive-value('left', 70, -70, 1);
     z-index: -1;
     height: 100%;
-    width: 8px;
+    stroke: $green;
 
     @include media('<1200px') {
       display: none;
@@ -1038,12 +1065,15 @@ html {
     &:nth-child(1) {
       justify-content: flex-start;
     }
+
     &:nth-child(3) {
       justify-content: flex-end;
     }
+
     &:nth-child(4) {
       justify-content: flex-start;
     }
+
     &:nth-child(6) {
       justify-content: flex-end;
     }
@@ -1132,6 +1162,7 @@ html {
   background-color: $green;
   border-radius: 10px;
   padding: 5px;
+  color: $white;
 }
 
 .why_main_section {
@@ -1173,7 +1204,20 @@ html {
 
   .why_main_img {
     max-height: 511px;
+    width: 100%;
     min-height: 195px;
+
+    @include media('<phone'){
+      display: none;
+    }
+  }
+
+  .why_main_img_phone{
+    display: none;
+
+    @include media('<phone'){
+      display: block;
+    }
   }
 }
 
@@ -1405,11 +1449,12 @@ html {
     min-width: 32px;
     min-height: 32px;
     background-color: $white;
-    border: 1px solid $green;
+    border: 1px solid #B5E8FC ;
     border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
+    box-shadow: 0px 1px 2px 0px rgba(16, 24, 40, 0.05);
   }
 
   .item_icon {
@@ -1489,6 +1534,7 @@ html {
   .first_item {
     .item_img {
       width: 100%;
+
       @include media('<phone') {
         display: none;
       }
@@ -1496,6 +1542,7 @@ html {
 
     .item_img_phone {
       display: none;
+
       @include media('<phone') {
         display: block;
       }
@@ -1547,6 +1594,7 @@ html {
 
   .last_item {
     padding: 0;
+
     .item_title {
       padding: 36px 24px 0 24px;
     }
@@ -1554,6 +1602,7 @@ html {
     .item_text {
       padding: 0 24px;
     }
+
     .item_img {
       float: right;
     }
@@ -1684,15 +1733,6 @@ html {
     width: max-content;
     margin: 0 auto;
 
-    svg {
-      height: 100%;
-      width: 100%;
-
-      path {
-        height: 100%;
-      }
-    }
-
     @include media('<desktop') {
       display: none;
     }
@@ -1711,7 +1751,7 @@ html {
   .transition_bottom {
     position: absolute;
     bottom: 1px;
-    right: -12px;
+    right: -13px;
 
     @include media('<desktop') {
       display: none;
@@ -1742,6 +1782,7 @@ html {
 
   .main_bottom_content {
     flex-direction: row-reverse;
+    align-items: flex-start;
     margin-top: -5px;
 
     @include media('<desktop') {
@@ -1797,6 +1838,7 @@ html {
     align-items: flex-start;
     flex-direction: column;
     @include adaptive-value('row-gap', 40, 25, 1);
+
     @include media('<tablet') {
       padding: 0 32px;
     }
@@ -1927,8 +1969,10 @@ html {
         display: none;
       }
     }
+
     .phone {
       display: none;
+
       @include media('<phone') {
         display: block;
       }
@@ -2032,10 +2076,10 @@ html {
   }
 
   .list {
-    margin:10px 0;
+    margin: 10px 0;
   }
 
-  .subpoint{
+  .subpoint {
     font-weight: 600;
   }
 
@@ -2117,6 +2161,7 @@ html {
       display: none;
     }
   }
+
   .contact_bg_phone {
     position: absolute;
     top: 0;
@@ -2219,6 +2264,7 @@ html {
     margin: 0 auto;
     @include adaptive-value('margin-bottom', 50, 35, 1);
   }
+
   form {
     border-radius: 20px;
     background: #fafafa;
@@ -2368,13 +2414,15 @@ html {
     .transition_top {
       position: absolute;
       top: -4px;
-      left: -11px;
+      left: -10px;
+      fill: $green;
     }
 
     .transition_bottom {
       position: absolute;
       bottom: 0;
-      right: -11px;
+      right: -12px;
+      fill: $green;
     }
   }
 
@@ -2390,13 +2438,15 @@ html {
     .transition_top {
       position: absolute;
       top: -4px;
-      right: -12px;
+      right: -13px;
+      fill: $green;
     }
 
     .transition_bottom {
       position: absolute;
       bottom: 0;
       left: -12px;
+      fill: $green;
     }
   }
 
@@ -2434,6 +2484,7 @@ html {
 
   .item_img {
     max-width: 540px;
+    width: 100%;
     max-height: 512px;
   }
 
@@ -2475,6 +2526,7 @@ html {
     width: 100%;
     margin: 0 auto;
     @include adaptive-value('margin-bottom', 60, 35, 1);
+
   }
 
   .about_us_img {
@@ -2563,6 +2615,7 @@ html {
 
     .phone {
       display: none;
+
       @include media('<phone') {
         display: block;
       }
@@ -2856,6 +2909,7 @@ html {
       &:last-child {
         width: 100%;
         row-gap: 40px;
+
         br {
           display: none;
         }
@@ -2958,6 +3012,19 @@ html {
 .blog_similar {
   @include adaptive-value('padding-top', 80, 35, 1);
   @include adaptive-value('padding-bottom', 80, 35, 1);
+  position: relative;
+
+  .line_bg {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 30%;
+    z-index: -1;
+
+    @include media('<tablet') {
+      display: none;
+    }
+  }
 
   .content {
     text-align: center;
@@ -3139,7 +3206,7 @@ html {
 .green_btn {
   border-radius: 75px;
   background-color: $green;
-  border: 1px solid $green;
+  border: 2px solid $green;
   color: $white;
   font-weight: 600;
   transition: all 0.3s ease 0s;
