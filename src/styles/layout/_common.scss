@@ -2809,10 +2809,16 @@ html {
   }
 
   .pricing_title {
-    max-width: 540px;
+    max-width: 620px;
     width: 100%;
     margin: 0 auto;
     margin-bottom: 12px;
+
+    @include media('<phone'){
+      br{
+        display: none;
+      }
+    }
   }
 
   .pricing_decription {
@@ -2861,6 +2867,10 @@ html {
     max-width: 1176px;
     width: 100%;
     margin: 0 auto;
+
+    @include media('<phone'){
+      grid-template: 1fr / 1fr;
+    }
   }
 
   .card {
