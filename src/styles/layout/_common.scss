@@ -2802,6 +2802,19 @@ html {
     max-height: 510px;
     width: 100%;
     @include adaptive-value('margin-bottom', 50, 35, 1);
+
+    @include media('<phone'){
+      display: none;
+    }
+  }
+
+  .pricing_main_img_phone{
+    display: none;
+
+    @include media('<phone'){
+      display: block;
+      margin-bottom: 35px;
+    }
   }
 
   .pricing_subtitle {
@@ -2914,6 +2927,18 @@ html {
   .factors_img {
     max-width: 540px;
     max-height: 512px;
+
+    @include media('<phone'){
+      display: none;
+    }
+  }
+
+  .factors_img_phone{
+    display: none;
+
+    @include media('<phone'){
+      display: block
+    }
   }
 }
 
