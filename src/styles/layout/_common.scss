@@ -2803,15 +2803,15 @@ html {
     width: 100%;
     @include adaptive-value('margin-bottom', 50, 35, 1);
 
-    @include media('<phone'){
+    @include media('<phone') {
       display: none;
     }
   }
 
-  .pricing_main_img_phone{
+  .pricing_main_img_phone {
     display: none;
 
-    @include media('<phone'){
+    @include media('<phone') {
       display: block;
       margin-bottom: 35px;
     }
@@ -2928,15 +2928,15 @@ html {
     max-width: 540px;
     max-height: 512px;
 
-    @include media('<phone'){
+    @include media('<phone') {
       display: none;
     }
   }
 
-  .factors_img_phone{
+  .factors_img_phone {
     display: none;
 
-    @include media('<phone'){
+    @include media('<phone') {
       display: block
     }
   }
@@ -3020,9 +3020,21 @@ html {
     }
   }
 
+  .top_elips {
+    position: absolute;
+    top: -50%;
+    right: -10%;
+  }
+
+  .bottom_elips {
+    position: absolute;
+    bottom: -40%;
+    left: -10%;
+  }
+
   .circle_right {
     position: absolute;
-    top: -100%;
+    top: -70%;
     right: -10%;
 
     @include media('<tablet') {
@@ -3037,7 +3049,7 @@ html {
 
   .circle_left {
     position: absolute;
-    bottom: -115%;
+    bottom: -90%;
     left: -10%;
 
     @include media('<tablet') {
