@@ -2779,6 +2779,30 @@ html {
 .pricing_section {
   @include adaptive-value('padding-top', 120, 60, 1);
   @include adaptive-value('padding-bottom', 120, 60, 1);
+  position: relative;
+
+  .line_bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    @include media('<tablet') {
+      display: none;
+    }
+  }
+
+  .line_bg_2 {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -1;
+
+    @include media('<tablet') {
+      display: none;
+    }
+  }
+
 
   .content {
     text-align: center;
